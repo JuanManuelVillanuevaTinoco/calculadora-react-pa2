@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="contenedor">
       <div className="pantalla">{pantalla || "0"}</div>
+      <p>Modo edición: agregando mejora en botón borrar</p>
 
       <div className="botones">
         <button className="ac" onClick={limpiar}>AC</button>
