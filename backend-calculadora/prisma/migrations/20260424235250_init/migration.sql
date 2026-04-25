@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Operacion" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "expresion" TEXT NOT NULL,
+    "resultado" TEXT NOT NULL,
+    "fecha" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

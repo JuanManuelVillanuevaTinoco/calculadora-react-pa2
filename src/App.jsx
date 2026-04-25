@@ -19,15 +19,28 @@ function App() {
     setResultadoMostrado(false);
   };
 
-  const calcular = () => {
-    try {
-      const res = eval(pantalla);
-      setPantalla(res.toString());
-      setResultadoMostrado(true);
-    } catch {
-      setPantalla("Error");
-    }
-  };
+ const calcular = async () => {
+  try {
+    const res = eval(pantalla);
+
+    // 🔥 enviar al backend
+    await fetch("http://localhost:3000/operacion", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        expresion: pantalla,
+        resultado: res.toString(),
+      }),
+    });
+
+    setPantalla(res.toString());
+    setResultadoMostrado(true);
+  } catch {
+    setPantalla("Error");
+  }
+};
 
   const limpiar = () => {
     setPantalla("");
