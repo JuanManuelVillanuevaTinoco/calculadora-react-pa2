@@ -1,4 +1,4 @@
-# Calculadora React PA2
+# Calculadora React PA3
 
 Proyecto de calculadora desarrollado en React para el curso de Construcción de Software.
 
